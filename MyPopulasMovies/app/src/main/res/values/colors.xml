@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black_translucent">#cc263238</color>
-    <color name="primary">#455A64</color>
-    <color name="primary_dark">#263238</color>
-    <color name="accent">#FFD600</color>
-    <color name="start_background_progress_tint">#FFFDE7</color>
+    <color name="black_translucent">#f2424242</color>
+    <color name="primary">#616161</color>
+    <color name="primary_dark">#424242</color>
+    <color name="accent">#FAFAFA</color>
+    <color name="start_background_progress_tint">#424242</color>
 
 </resources>
