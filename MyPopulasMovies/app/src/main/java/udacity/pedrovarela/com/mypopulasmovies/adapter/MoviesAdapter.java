@@ -51,10 +51,10 @@ public class MoviesAdapter extends ArrayAdapter<Movie>
         }
 
         Picasso.with(getContext()).load(getItem(position).getPoster_path()).into(holder.imageViewMoviePoster);
+        holder.imageViewMoviePoster.setEnabled(false);
         holder.textViewMovieTitle.setText(getItem(position).title);
         holder.textViewMovieTitle.setSelected(true);
         holder.ratingBarMovieRating.setRating(getItem(position).vote_average);
-
 
         return convertView;
 

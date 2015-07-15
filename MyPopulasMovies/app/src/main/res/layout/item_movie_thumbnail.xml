@@ -41,6 +41,9 @@
             android:layout_height="wrap_content"
             android:stepSize="1"
             android:numStars="10"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:progressTint="@color/accent"
             android:progressBackgroundTint="@color/start_background_progress_tint"/>
 
