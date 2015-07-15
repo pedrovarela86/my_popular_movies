@@ -5,6 +5,7 @@
 
 
     <ImageView
+        android:contentDescription="@string/content_description_movie_poster"
         android:id="@+id/imageViewMoviePoster"
         android:layout_width="match_parent"
         android:layout_height="@dimen/poster_height"

@@ -1,1 +1,1 @@
-<resources>    <string name="app_name">My Populas Movies Part 1</string>    <string name="hello_world">Hello world!</string>    <string name="action_settings">Settings</string></resources>
+<resources>    <string name="app_name">My Popular Movies Part 1</string>    <string name="action_settings">Settings</string>    <!--content descriptions-->    <string name="content_description_movie_poster">Movie poster</string></resources>
