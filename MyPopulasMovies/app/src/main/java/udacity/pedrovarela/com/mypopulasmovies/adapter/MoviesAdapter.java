@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -15,15 +16,18 @@ import java.util.List;
 
 import udacity.pedrovarela.com.mypopulasmovies.R;
 import udacity.pedrovarela.com.mypopulasmovies.core.Movie;
+import udacity.pedrovarela.com.mypopulasmovies.listener.MovieItemListener;
 
 /**
  * Created by pedro on 7/13/15.
  */
 public class MoviesAdapter extends ArrayAdapter<Movie>
 {
+    public MovieItemListener listener;
 
-    public MoviesAdapter(Context context,  List<Movie> movieList) {
+    public MoviesAdapter(Context context,  List<Movie> movieList,MovieItemListener callBack) {
         super(context, R.layout.item_movie_thumbnail, movieList);
+        this.listener = callBack;
     }
 
     /**
@@ -34,7 +38,7 @@ public class MoviesAdapter extends ArrayAdapter<Movie>
      * @return the rendered View
      */
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         ViewHolder holder;
         if(convertView==null){
@@ -43,7 +47,7 @@ public class MoviesAdapter extends ArrayAdapter<Movie>
             holder = new ViewHolder();
             holder.imageViewMoviePoster = (ImageView) convertView.findViewById(R.id.imageViewMoviePoster);
             holder.textViewMovieTitle = (TextView) convertView.findViewById(R.id.textViewMovieTitle);
-            holder.ratingBarMovieRating = (RatingBar) convertView.findViewById(R.id.ratingBarMovieRating);
+
 
             convertView.setTag(holder);
         }else{
@@ -54,7 +58,12 @@ public class MoviesAdapter extends ArrayAdapter<Movie>
         holder.imageViewMoviePoster.setEnabled(false);
         holder.textViewMovieTitle.setText(getItem(position).title);
         holder.textViewMovieTitle.setSelected(true);
-        holder.ratingBarMovieRating.setRating(getItem(position).vote_average);
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onMovieSelected(getItem(position));
+            }
+        });
 
         return convertView;
 
@@ -66,6 +75,5 @@ public class MoviesAdapter extends ArrayAdapter<Movie>
     class ViewHolder{
         ImageView imageViewMoviePoster;
         TextView textViewMovieTitle;
-        RatingBar ratingBarMovieRating;
     }
 }
