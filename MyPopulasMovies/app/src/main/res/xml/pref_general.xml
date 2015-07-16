@@ -4,9 +4,9 @@
          dismiss it. -->
     <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
     <ListPreference
-        android:key="sort_by_list"
+        android:key="@string/pref_sort_key"
         android:title="@string/pref_title_sort_by"
-        android:defaultValue="popularity.desc"
+        android:defaultValue="@string/pref_default_sorting"
         android:entries="@array/pref_sort_list_titles"
         android:entryValues="@array/pref_sort_list_values"
         android:negativeButtonText="@null"

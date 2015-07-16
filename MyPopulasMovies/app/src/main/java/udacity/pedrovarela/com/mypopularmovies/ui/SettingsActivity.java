@@ -206,7 +206,7 @@ public class SettingsActivity extends PreferenceActivity {
             // to their values. When their values change, their summaries are
             // updated to reflect the new value, per the Android Design
             // guidelines.
-            bindPreferenceSummaryToValue(findPreference("sort_by_list"));
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_sort_key)));
         }
     }
 
