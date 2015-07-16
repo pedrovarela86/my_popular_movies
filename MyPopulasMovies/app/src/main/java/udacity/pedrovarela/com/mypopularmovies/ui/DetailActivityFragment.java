@@ -1,4 +1,4 @@
-package udacity.pedrovarela.com.mypopulasmovies.ui;
+package udacity.pedrovarela.com.mypopularmovies.ui;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -12,10 +12,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
-import udacity.pedrovarela.com.mypopulasmovies.R;
-import udacity.pedrovarela.com.mypopulasmovies.core.Movie;
+import udacity.pedrovarela.com.mypopularmovies.R;
+import udacity.pedrovarela.com.mypopularmovies.core.Movie;
 
 /**
  * A placeholder fragment containing a simple view.

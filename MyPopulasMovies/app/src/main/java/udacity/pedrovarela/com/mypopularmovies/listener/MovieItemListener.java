@@ -1,6 +1,6 @@
-package udacity.pedrovarela.com.mypopulasmovies.listener;
+package udacity.pedrovarela.com.mypopularmovies.listener;
 
-import udacity.pedrovarela.com.mypopulasmovies.core.Movie;
+import udacity.pedrovarela.com.mypopularmovies.core.Movie;
 
 /**
  * Created by pedro on 7/14/15.

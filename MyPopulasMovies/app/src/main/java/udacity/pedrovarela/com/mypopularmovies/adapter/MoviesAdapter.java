@@ -1,4 +1,4 @@
-package udacity.pedrovarela.com.mypopulasmovies.adapter;
+package udacity.pedrovarela.com.mypopularmovies.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,20 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import udacity.pedrovarela.com.mypopulasmovies.R;
-import udacity.pedrovarela.com.mypopulasmovies.core.Movie;
-import udacity.pedrovarela.com.mypopulasmovies.listener.MovieItemListener;
+import udacity.pedrovarela.com.mypopularmovies.R;
+import udacity.pedrovarela.com.mypopularmovies.core.Movie;
+import udacity.pedrovarela.com.mypopularmovies.listener.MovieItemListener;
 
 /**
  * Created by pedro on 7/13/15.
+ * Movies adapter used in the grid view
  */
 public class MoviesAdapter extends ArrayAdapter<Movie>
 {

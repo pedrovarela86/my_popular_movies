@@ -3,7 +3,7 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="udacity.pedrovarela.com.mypopulasmovies.ui.SettingsActivity$GeneralPreferenceFragment"
+        android:fragment="udacity.pedrovarela.com.mypopularmovies.ui.SettingsActivity$GeneralPreferenceFragment"
         android:title="@string/pref_title_sort_by" />
 
 

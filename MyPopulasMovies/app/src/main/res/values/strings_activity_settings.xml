@@ -5,13 +5,13 @@
     <string name="pref_header_sort_by">Sort by</string>
 
     <string-array name="pref_sort_list_titles">
-        <item>Asc</item>
-        <item>Desc</item>
+        <item>Most popular</item>
+        <item>Highest rated</item>
     </string-array>
 
     <string-array name="pref_sort_list_values">
-        <item>popularity.asc</item>
         <item>popularity.desc</item>
+        <item>vote_count.desc</item>
     </string-array>
 
 </resources>

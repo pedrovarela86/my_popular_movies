@@ -1,11 +1,11 @@
-package udacity.pedrovarela.com.mypopulasmovies.ui;
+package udacity.pedrovarela.com.mypopularmovies.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import udacity.pedrovarela.com.mypopulasmovies.R;
+import udacity.pedrovarela.com.mypopularmovies.R;
 
 public class DetailActivity extends Activity {
 

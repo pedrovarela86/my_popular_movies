@@ -1,4 +1,4 @@
-package udacity.pedrovarela.com.mypopulasmovies.core;
+package udacity.pedrovarela.com.mypopularmovies.core;
 
 import java.io.Serializable;
 
