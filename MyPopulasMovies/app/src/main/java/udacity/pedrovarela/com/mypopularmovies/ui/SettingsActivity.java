@@ -47,6 +47,7 @@ public class SettingsActivity extends PreferenceActivity {
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
      */
+    @SuppressWarnings("ConstantConditions")
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void setupActionBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -95,6 +96,7 @@ public class SettingsActivity extends PreferenceActivity {
         PreferenceCategory fakeHeader = new PreferenceCategory(this);
         fakeHeader.setTitle(R.string.pref_header_sort_by);
         // Add 'general' preferences.
+        //noinspection deprecation
         addPreferencesFromResource(R.xml.pref_general);
 
         // Bind the summaries of EditText/List/Dialog/Ringtone preferences to

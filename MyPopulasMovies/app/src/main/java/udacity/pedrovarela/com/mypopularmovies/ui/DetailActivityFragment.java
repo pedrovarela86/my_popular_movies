@@ -20,13 +20,6 @@ import udacity.pedrovarela.com.mypopularmovies.core.Movie;
  */
 public class DetailActivityFragment extends Fragment {
 
-    private RatingBar ratingBarMovieRating;
-    private TextView textViewTitle;
-    private ImageView imageViewMoviePoster;
-    private TextView textViewReleaseDate,textViewRating;
-    private TextView textViewSynopsis;
-
-    private Movie movie;
     public DetailActivityFragment() {
     }
 
@@ -44,16 +37,16 @@ public class DetailActivityFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ratingBarMovieRating = (RatingBar) view.findViewById(R.id.ratingBarMovieRating);
-        textViewTitle = (TextView) view.findViewById(R.id.textViewMovieTitle);
-        textViewReleaseDate = (TextView) view.findViewById(R.id.textViewReleaseDate);
-        textViewSynopsis = (TextView) view.findViewById(R.id.textViewMovieSynopsis);
-        imageViewMoviePoster = (ImageView) view.findViewById(R.id.imageViewMoviePoster);
-        textViewRating = (TextView) view.findViewById(R.id.textViewRating);
+        RatingBar ratingBarMovieRating = (RatingBar) view.findViewById(R.id.ratingBarMovieRating);
+        TextView textViewTitle = (TextView) view.findViewById(R.id.textViewMovieTitle);
+        TextView textViewReleaseDate = (TextView) view.findViewById(R.id.textViewReleaseDate);
+        TextView textViewSynopsis = (TextView) view.findViewById(R.id.textViewMovieSynopsis);
+        ImageView imageViewMoviePoster = (ImageView) view.findViewById(R.id.imageViewMoviePoster);
+        TextView textViewRating = (TextView) view.findViewById(R.id.textViewRating);
 
         Intent intent = getActivity().getIntent();
         if(intent!=null && intent.hasExtra("movieInfo")){
-            movie = (Movie) intent.getSerializableExtra("movieInfo");
+            Movie movie = (Movie) intent.getSerializableExtra("movieInfo");
 
             ratingBarMovieRating.setRating(movie.vote_average);
             textViewTitle.setText(movie.title);
