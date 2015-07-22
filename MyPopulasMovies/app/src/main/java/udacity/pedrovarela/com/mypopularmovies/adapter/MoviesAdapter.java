@@ -43,11 +43,7 @@ public class MoviesAdapter extends ArrayAdapter<Movie>
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.item_movie_thumbnail,parent,false);
-            holder = new ViewHolder();
-            holder.imageViewMoviePoster = (ImageView) convertView.findViewById(R.id.imageViewMoviePoster);
-            holder.textViewMovieTitle = (TextView) convertView.findViewById(R.id.textViewMovieTitle);
-
-
+            holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
@@ -72,7 +68,12 @@ public class MoviesAdapter extends ArrayAdapter<Movie>
      * Class for ViewHolder pattern
      */
     class ViewHolder{
-        ImageView imageViewMoviePoster;
-        TextView textViewMovieTitle;
+        public final ImageView imageViewMoviePoster;
+        public final TextView textViewMovieTitle;
+
+        public ViewHolder(View view) {
+            this.imageViewMoviePoster = (ImageView) view.findViewById(R.id.imageViewMoviePoster);
+            this.textViewMovieTitle = (TextView) view.findViewById(R.id.textViewMovieTitle);
+        }
     }
 }
