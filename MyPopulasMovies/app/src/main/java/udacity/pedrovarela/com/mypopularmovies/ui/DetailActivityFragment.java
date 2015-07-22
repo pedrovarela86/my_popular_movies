@@ -20,21 +20,40 @@ import udacity.pedrovarela.com.mypopularmovies.core.Movie;
  */
 public class DetailActivityFragment extends Fragment {
 
+    /**
+     * Default empty constructor
+     */
     public DetailActivityFragment() {
     }
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
     }
 
+    /**
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
+    /**
+     *
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         RatingBar ratingBarMovieRating = (RatingBar) view.findViewById(R.id.ratingBarMovieRating);
@@ -45,17 +64,16 @@ public class DetailActivityFragment extends Fragment {
         TextView textViewRating = (TextView) view.findViewById(R.id.textViewRating);
 
         Intent intent = getActivity().getIntent();
-        if(intent!=null && intent.hasExtra("movieInfo")){
-            Movie movie = (Movie) intent.getSerializableExtra("movieInfo");
 
+        if(intent!=null && intent.hasExtra("movieInfo")){
+
+            Movie movie = intent.getParcelableExtra("movieInfo");
             ratingBarMovieRating.setRating(movie.vote_average);
             textViewTitle.setText(movie.title);
             textViewSynopsis.setText(movie.overview);
             textViewReleaseDate.setText(movie.release_date);
             textViewRating.setText((int) movie.vote_average + "/10");
             Picasso.with(getActivity()).load(movie.getPoster_path()).into(imageViewMoviePoster);
-
-
         }
 
     }

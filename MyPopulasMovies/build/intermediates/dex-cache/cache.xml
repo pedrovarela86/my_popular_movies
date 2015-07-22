@@ -2,39 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-0096ae78f592232154285dd2ec055d9669daaba2.jar" />
-    </item>
-    <item
-        jar="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/classes-1ebd457240ae944203d26f0a193212a990536477.jar" />
-    </item>
-    <item
         jar="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/exploded-aar/com.android.support/support-v13/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="79a5b6d9fbab3b5fb4c6f86a1ed7a17722fd937b">
         <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-2e6177fb11f9048d71a5e6c1bc6d5653939c0ae4.jar" />
-    </item>
-    <item
-        jar="/Users/pedro/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-27dd63b97e94bd060fde561877ba19f9d63d29b4.jar" />
-    </item>
-    <item
-        jar="/Users/pedro/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-aeac0f872beecddb37c6d323742e769eaee52510.jar" />
     </item>
     <item
         jar="/Users/pedro/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
@@ -44,11 +16,39 @@
         <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/gson-2.3.1-d5a995c89ce59cf095f998ab285e7ec7a2f35f6e.jar" />
     </item>
     <item
+        jar="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/classes-1ebd457240ae944203d26f0a193212a990536477.jar" />
+    </item>
+    <item
+        jar="/Users/pedro/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-27dd63b97e94bd060fde561877ba19f9d63d29b4.jar" />
+    </item>
+    <item
+        jar="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-0096ae78f592232154285dd2ec055d9669daaba2.jar" />
+    </item>
+    <item
         jar="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/exploded-aar/com.android.support/support-v13/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="9aa93835393824b436f366120c9ba8a0260ce75d">
         <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/classes-20535d31cf97b100da032c79b3f2e2726265e12a.jar" />
+    </item>
+    <item
+        jar="/Users/pedro/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/pedro/StudioProjects/my_popular_movies/MyPopulasMovies/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-aeac0f872beecddb37c6d323742e769eaee52510.jar" />
     </item>
 
 </items>
