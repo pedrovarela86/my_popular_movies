@@ -74,7 +74,11 @@ public class DetailActivityFragment extends Fragment {
             textViewReleaseDate.setText(movie.release_date);
             textViewRating.setText((int) movie.vote_average + "/10");
             Picasso.with(getActivity()).load(movie.getPoster_path()).into(imageViewMoviePoster);
+
+            getActivity().setTitle(movie.title);
+
         }
+
 
     }
 }
