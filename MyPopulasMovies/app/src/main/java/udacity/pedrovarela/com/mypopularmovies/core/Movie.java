@@ -12,10 +12,10 @@ import android.os.Parcelable;
  * http://www.developerphil.com/parcelable-vs-serializable/
  */
 public class Movie implements Parcelable {
+    public int id;
     public boolean adult;
     public String backdrop_path;
     public int[] genre_ids;
-    public int id;
     public String original_language;
     public String original_title;
     public String overview;
@@ -56,10 +56,10 @@ public class Movie implements Parcelable {
      * @param in
      */
     public Movie(Parcel in) {
+        id = in.readInt();
         adult = in.readInt() == 1;
         backdrop_path = in.readString();
         genre_ids = in.createIntArray();
-        id = in.readInt();
         original_language = in.readString();
         original_title = in.readString();
         overview = in.readString();
@@ -88,10 +88,10 @@ public class Movie implements Parcelable {
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeInt(adult ? 1 : 0);
         dest.writeString(backdrop_path);
         dest.writeIntArray(genre_ids);
-        dest.writeInt(id);
         dest.writeString(original_language);
         dest.writeString(original_title);
         dest.writeString(overview);
