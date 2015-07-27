@@ -47,7 +47,7 @@ public class MovieContract {
     /**
      * Inner class that defines the table contents of the genreId    table
      */
-    public static final class GenereIdEntry implements BaseColumns {
+    public static final class GenreIdEntry implements BaseColumns {
         public static final String TABLE_NAME = "genre_id";
 
         public static final String COLUMN_ID = "id ";

@@ -1,7 +1,6 @@
 package udacity.pedrovarela.com.mypopularmovies.ui;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,30 +13,45 @@ import com.squareup.picasso.Picasso;
 
 import udacity.pedrovarela.com.mypopularmovies.R;
 import udacity.pedrovarela.com.mypopularmovies.core.Movie;
+import udacity.pedrovarela.com.mypopularmovies.listener.MovieItemListener;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class DetailActivityFragment extends Fragment {
+public class DetailFragment extends Fragment implements MovieItemListener {
+
+    /**
+     * The fragment argument representing the item ID that this fragment
+     * represents.
+     */
+    public static final String ARG_ITEM_ID = "movie_info";
+    RatingBar ratingBarMovieRating;
+    TextView textViewTitle;
+    TextView textViewReleaseDate;
+    TextView textViewSynopsis;
+    ImageView imageViewMoviePoster;
+    TextView textViewRating;
+    private Movie mMovie;
 
     /**
      * Default empty constructor
      */
-    public DetailActivityFragment() {
+    public DetailFragment() {
     }
 
     /**
-     *
      * @param savedInstanceState
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        if (getArguments() != null && getArguments().containsKey(ARG_ITEM_ID)) {
+            mMovie = getArguments().getParcelable(ARG_ITEM_ID);
+        }
     }
 
     /**
-     *
      * @param inflater
      * @param container
      * @param savedInstanceState
@@ -50,25 +64,30 @@ public class DetailActivityFragment extends Fragment {
     }
 
     /**
-     *
      * @param view
      * @param savedInstanceState
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        RatingBar ratingBarMovieRating = (RatingBar) view.findViewById(R.id.ratingBarMovieRating);
-        TextView textViewTitle = (TextView) view.findViewById(R.id.textViewMovieTitle);
-        TextView textViewReleaseDate = (TextView) view.findViewById(R.id.textViewReleaseDate);
-        TextView textViewSynopsis = (TextView) view.findViewById(R.id.textViewMovieSynopsis);
-        ImageView imageViewMoviePoster = (ImageView) view.findViewById(R.id.imageViewMoviePoster);
-        TextView textViewRating = (TextView) view.findViewById(R.id.textViewRating);
+        ratingBarMovieRating = (RatingBar) view.findViewById(R.id.ratingBarMovieRating);
+        textViewTitle = (TextView) view.findViewById(R.id.textViewMovieTitle);
+        textViewReleaseDate = (TextView) view.findViewById(R.id.textViewReleaseDate);
+        textViewSynopsis = (TextView) view.findViewById(R.id.textViewMovieSynopsis);
+        imageViewMoviePoster = (ImageView) view.findViewById(R.id.imageViewMoviePoster);
+        textViewRating = (TextView) view.findViewById(R.id.textViewRating);
+        setMovieInformation(mMovie);
+    }
 
-        Intent intent = getActivity().getIntent();
+    /**
+     * Set up movie information
+     *
+     * @param movie
+     */
 
-        if(intent!=null && intent.hasExtra("movieInfo")){
+    private void setMovieInformation(Movie movie) {
 
-            Movie movie = intent.getParcelableExtra("movieInfo");
-            ratingBarMovieRating.setRating(movie.vote_average);
+        if (movie != null) {
+            ratingBarMovieRating.setRating(Math.round(movie.vote_average));
             textViewTitle.setText(movie.title);
             textViewSynopsis.setText(movie.overview);
             textViewReleaseDate.setText(movie.release_date);
@@ -76,9 +95,12 @@ public class DetailActivityFragment extends Fragment {
             Picasso.with(getActivity()).load(movie.getPoster_path()).into(imageViewMoviePoster);
 
             getActivity().setTitle(movie.title);
-
         }
 
+    }
 
+    @Override
+    public void onMovieSelected(Movie movie) {
+        setMovieInformation(movie);
     }
 }

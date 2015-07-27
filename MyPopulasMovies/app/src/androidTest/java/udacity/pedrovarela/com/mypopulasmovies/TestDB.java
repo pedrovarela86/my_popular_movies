@@ -3,6 +3,7 @@ package udacity.pedrovarela.com.mypopulasmovies;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
+import android.util.Log;
 
 import java.util.HashSet;
 
@@ -11,8 +12,6 @@ import udacity.pedrovarela.com.mypopularmovies.data.MovieDBHelper;
 
 
 public class TestDB extends AndroidTestCase {
-
-    public static final String LOG_TAG = TestDB.class.getSimpleName();
 
     // Since we want each test to start with a clean slate
     void deleteTheDatabase() {
@@ -42,7 +41,7 @@ public class TestDB extends AndroidTestCase {
         // Android metadata (db version information)
 
         final HashSet<String> tableNameHashSet = new HashSet<>();
-        tableNameHashSet.add(MovieContract.GenereIdEntry.TABLE_NAME);
+        tableNameHashSet.add(MovieContract.GenreIdEntry.TABLE_NAME);
         tableNameHashSet.add(MovieContract.MovieEntry.TABLE_NAME);
 
         mContext.deleteDatabase(MovieDBHelper.DATABASE_NAME);
@@ -74,35 +73,40 @@ public class TestDB extends AndroidTestCase {
                 c.moveToFirst());
 
         // Build a HashSet of all of the column names we want to look for
-        final HashSet<String> locationColumnHashSet = new HashSet<String>();
-        locationColumnHashSet.add(MovieContract.MovieEntry._ID);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_ADULT);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_BACKDROP_PATH);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_GENRE_ID);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_BACKDROP_PATH);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_ORIGINAL_LANGUAGE);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_ORIGINAL_TITLE);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_OVERVIEW);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_POPULARITY);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_POSTER_IMAGE);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_POSTER_PATH);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_RELEASE_DATE);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_TITLE);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_VIDEO);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_ORIGINAL_TITLE);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_VOTE_AVERAGE);
-        locationColumnHashSet.add(MovieContract.MovieEntry.COLUMN_VOTE_COUNT);
+        final HashSet<String> movieColumnHashSet = new HashSet<>();
+        movieColumnHashSet.add(MovieContract.MovieEntry._ID);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_ADULT);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_BACKDROP_PATH);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_GENRE_ID);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_BACKDROP_PATH);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_ORIGINAL_LANGUAGE);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_ORIGINAL_TITLE);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_OVERVIEW);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_POPULARITY);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_POSTER_IMAGE);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_POSTER_PATH);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_RELEASE_DATE);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_TITLE);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_VIDEO);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_ORIGINAL_TITLE);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_VOTE_AVERAGE);
+        movieColumnHashSet.add(MovieContract.MovieEntry.COLUMN_VOTE_COUNT);
+//        movieColumnHashSet.add(MovieContract.GenreIdEntry._ID);
+        movieColumnHashSet.add(MovieContract.GenreIdEntry.COLUMN_ID);
 
         int columnNameIndex = c.getColumnIndex("name");
         do {
             String columnName = c.getString(columnNameIndex);
-            locationColumnHashSet.remove(columnName);
+            assertNotNull(columnName,c);
+            movieColumnHashSet.remove(columnName);
         } while (c.moveToNext());
 
         // if this fails, it means that your database doesn't contain all of the required location
         // entry columns
-        assertTrue("Error: The database doesn't contain all of the required location entry columns",
-                locationColumnHashSet.isEmpty());
+        assertTrue("Error: The database doesn't contain all of the required movie entry columns",
+                movieColumnHashSet.isEmpty());
+
+        c.close();
         db.close();
     }
 

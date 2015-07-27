@@ -22,11 +22,8 @@ import udacity.pedrovarela.com.mypopularmovies.listener.MovieItemListener;
  */
 public class MoviesAdapter extends ArrayAdapter<Movie>
 {
-    public MovieItemListener listener;
-
-    public MoviesAdapter(Context context,  List<Movie> movieList,MovieItemListener callBack) {
+    public MoviesAdapter(Context context,  List<Movie> movieList) {
         super(context, R.layout.item_movie_thumbnail, movieList);
-        this.listener = callBack;
     }
 
     /**
@@ -53,13 +50,6 @@ public class MoviesAdapter extends ArrayAdapter<Movie>
         holder.imageViewMoviePoster.setEnabled(false);
         holder.textViewMovieTitle.setText(getItem(position).title);
         holder.textViewMovieTitle.setSelected(true);
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onMovieSelected(getItem(position));
-            }
-        });
-
         return convertView;
 
     }

@@ -15,5 +15,7 @@
     <color name="text_dark">#333333</color>
     <color name="text_light">#ffffff</color>
 
+    <color name="details_window_background">#ffffff</color>
+
 
 </resources>

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import udacity.pedrovarela.com.mypopularmovies.data.MovieContract.GenereIdEntry;
+import udacity.pedrovarela.com.mypopularmovies.data.MovieContract.GenreIdEntry;
 import udacity.pedrovarela.com.mypopularmovies.data.MovieContract.MovieEntry;
 
 /**
@@ -28,10 +28,10 @@ public class MovieDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         final String SQL_CREATE_GENRE_ID_TABLE = "CREATE TABLE " +
-                GenereIdEntry.TABLE_NAME +
+                GenreIdEntry.TABLE_NAME +
                 "(" +
-                GenereIdEntry._ID + " INTEGER PRIMARY KEY," +
-                GenereIdEntry.COLUMN_ID + " TEXT NOT NULL" +
+                GenreIdEntry._ID + " INTEGER PRIMARY KEY," +
+                GenreIdEntry.COLUMN_ID + " TEXT NOT NULL" +
                 ")";
 
         final String SQL_CREATE_MOVIE_TABLE = "CREATE TABLE " +
@@ -55,8 +55,8 @@ public class MovieDBHelper extends SQLiteOpenHelper {
 
                 " FOREIGN KEY (" + MovieEntry.COLUMN_GENRE_ID +
                 ") REFERENCES " +
-                GenereIdEntry.TABLE_NAME +
-                " (" + GenereIdEntry._ID +
+                GenreIdEntry.TABLE_NAME +
+                " (" + GenreIdEntry._ID +
                 ")" +
                 ")";
 
@@ -73,7 +73,7 @@ public class MovieDBHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + GenereIdEntry.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + GenreIdEntry.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + MovieEntry.TABLE_NAME);
         onCreate(db);
 

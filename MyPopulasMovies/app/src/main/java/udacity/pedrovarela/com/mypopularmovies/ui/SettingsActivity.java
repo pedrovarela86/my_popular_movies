@@ -44,6 +44,12 @@ public class SettingsActivity extends PreferenceActivity {
         setupActionBar();
     }
 
+
+    @Override
+    protected boolean isValidFragment(String fragmentName) {
+        return true;
+    }
+
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
      */
