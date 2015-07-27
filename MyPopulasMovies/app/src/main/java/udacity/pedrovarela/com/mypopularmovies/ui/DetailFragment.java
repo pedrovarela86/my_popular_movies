@@ -18,7 +18,7 @@ import udacity.pedrovarela.com.mypopularmovies.listener.MovieItemListener;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class DetailFragment extends Fragment implements MovieItemListener {
+public class DetailFragment extends Fragment {
 
     /**
      * The fragment argument representing the item ID that this fragment
@@ -46,9 +46,6 @@ public class DetailFragment extends Fragment implements MovieItemListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-        if (getArguments() != null && getArguments().containsKey(ARG_ITEM_ID)) {
-            mMovie = getArguments().getParcelable(ARG_ITEM_ID);
-        }
     }
 
     /**
@@ -60,6 +57,9 @@ public class DetailFragment extends Fragment implements MovieItemListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if (getArguments() != null && getArguments().containsKey(ARG_ITEM_ID)) {
+            mMovie = getArguments().getParcelable(ARG_ITEM_ID);
+        }
         return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
@@ -69,6 +69,9 @@ public class DetailFragment extends Fragment implements MovieItemListener {
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+
+
+
         ratingBarMovieRating = (RatingBar) view.findViewById(R.id.ratingBarMovieRating);
         textViewTitle = (TextView) view.findViewById(R.id.textViewMovieTitle);
         textViewReleaseDate = (TextView) view.findViewById(R.id.textViewReleaseDate);
@@ -99,8 +102,5 @@ public class DetailFragment extends Fragment implements MovieItemListener {
 
     }
 
-    @Override
-    public void onMovieSelected(Movie movie) {
-        setMovieInformation(movie);
-    }
+
 }

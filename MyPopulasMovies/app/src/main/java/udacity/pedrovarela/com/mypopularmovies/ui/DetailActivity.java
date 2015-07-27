@@ -13,9 +13,12 @@ public class DetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
         if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction().add(R.id.fragment_detail_container, new DetailFragment()).commit();
+            Bundle bundle = new Bundle();
+            bundle.putParcelable(DetailFragment.ARG_ITEM_ID, getIntent().getParcelableExtra(DetailFragment.ARG_ITEM_ID));
+            DetailFragment fragment = new DetailFragment();
+            fragment.setArguments(bundle);
+            getFragmentManager().beginTransaction().add(R.id.fragment_detail_container, fragment).commit();
         }
     }
 
