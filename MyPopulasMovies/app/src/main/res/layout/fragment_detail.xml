@@ -6,74 +6,68 @@
     tools:context="udacity.pedrovarela.com.mypopularmovies.ui.DetailFragment">
 
 
-    <ImageView
-        android:id="@+id/imageViewMoviePoster"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.60"
-        android:contentDescription="@null"
-        android:scaleType="centerCrop" />
+        android:layout_weight="0.60">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/imageViewMoviePoster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop" />
 
         <LinearLayout
-            android:padding="@dimen/padding_normal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textViewMovieTitle"
-                style="@style/TextView.Title.Light"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
-
-            <TextView
-                android:id="@+id/textViewMovieSynopsis"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small" />
+            android:layout_alignParentBottom="true"
+            android:background="@color/black_translucent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textViewReleaseDate"
-                style="@style/TextView.Title"
-                android:layout_width="wrap_content"
+                style="@style/TextView.Title.Light"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                android:layout_margin="@dimen/margin_small"
+                android:layout_weight="1" />
 
             <RatingBar
                 android:id="@+id/ratingBarMovieRating"
                 style="@android:style/Widget.Holo.Light.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_small"
-                android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:clickable="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
+                android:layout_margin="@dimen/margin_small"
                 android:numStars="10"
-                android:stepSize="1" />
+                android:progressBackgroundTint="@color/text_light"
+                android:progressTint="@color/start_tint" />
 
             <TextView
                 android:id="@+id/textViewRating"
+                style="@style/TextView.Light"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/ratingBarMovieRating"
-                android:layout_below="@+id/ratingBarMovieRating"
-                android:layout_marginStart="@dimen/margin_small"
+                android:layout_margin="@dimen/margin_small"
+
                 android:textStyle="bold" />
+        </LinearLayout>
 
-        </RelativeLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
-    </ScrollView>
+    <TextView
+        android:id="@+id/textViewMovieSynopsis"
+        style="@style/TextView.Synopsis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_small"
+        android:scrollbarAlwaysDrawVerticalTrack="true" />
+
+    <ListView
+        android:id="@+id/listViewMovieTrailer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
 </LinearLayout>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black_translucent">#88000000</color>
-    <color name="primary">#000000</color>
-    <color name="primary_dark">#424242</color>
+    <color name="primary">#666666</color>
+    <color name="primary_dark">#666666</color>
     <color name="accent">#FAFAFA</color>
     <color name="start_background_progress_tint">#000000</color>
     <color name="start_tint">#FFEB3B</color>
 
 
     <color name="primary_detail">#000000</color>
-    <color name="primary_detail_dark">#000000</color>
+    <color name="primary_detail_dark">#111111</color>
     <color name="accent_detail">#B2DFDB</color>
 
     <color name="text_dark">#333333</color>
